@@ -32,8 +32,27 @@ class Queue
             return N;
         }
 
-        void enqueue(T item);
-        T dequeue();
+        void enqueue(T item)
+        {
+            std::shared_ptr<Node> oldlast = last;
+            last = std::make_shared<Node>();
+            last->item = item;
+            last->next = nullptr;
+            if(isEmpty())
+                first = last;
+            else
+                oldlast->next = last;
+            N++;
+        }
+        T dequeue()
+        {
+            T item = first->item;
+            first = first->next;
+            if(isEmpty())
+                last = nullptr;
+            N--;
+            return item;
+        }
 };
 
 

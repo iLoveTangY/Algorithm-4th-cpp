@@ -23,6 +23,14 @@ class Stack
         {
             return N;
         }
+        bool isEmpty()
+        {
+            return N == 0;
+        }
+        T peak()
+        {
+            return first->item;
+        }
         void push(T item)
         {
             shared_ptr<Node> oldfirst = first;
@@ -48,7 +56,7 @@ class Stack
         };
      
         shared_ptr<Node> first = nullptr;
-        int N;
+        int N = 0;
 };
 
 #endif

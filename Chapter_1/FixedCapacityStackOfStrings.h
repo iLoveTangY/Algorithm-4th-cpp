@@ -12,17 +12,24 @@ class FixedCapacityStackOfStrings
 {
     private:
         std::vector<std::string> a;
+        int cap; // 栈的容量
         int N = 0;  // 栈内真实数据大小
 
     public:
-        FixedCapacityStackOfStrings(int cap)
+        FixedCapacityStackOfStrings(int _cap)
         {
-            a.reserve(cap);
+            cap = _cap;
+            a.reserve(_cap);
         }
 
         bool isEmpty()
         {
             return N == 0;
+        }
+
+        bool isFull()
+        {
+            return N == cap;
         }
 
         int size()
