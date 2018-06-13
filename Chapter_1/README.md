@@ -1,3 +1,4 @@
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 # Chapter 1
 ## 1.1 基础编程模型
 ### 1.1.27
@@ -86,6 +87,9 @@ T peak()
 最后栈中的数字就是结果。
 ### 1.3.13
 (b)不可能。在`4`出列之前`1`、`2`、`3`一定已经被出列了。同理(c)、(d)也不可能。
+### 1.3.37
+**Josephus问题**  
+见[Josephus.cpp](Josephus.cpp)。
 
 
 
