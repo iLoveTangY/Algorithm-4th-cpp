@@ -90,6 +90,8 @@ T peak()
 ### 1.3.37
 **Josephus问题**  
 见[Josephus.cpp](Josephus.cpp)。
+### 1.3.42
+见[Stack.h](Stack.h)。主要需要注意的是要拷贝链表。
 
 
 
