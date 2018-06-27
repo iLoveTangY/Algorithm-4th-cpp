@@ -34,3 +34,9 @@
 # codeblocks
 *.cbp
 *.depend
+
+test
+test.o
+test.exe
+test.cpp
+test.hpp
