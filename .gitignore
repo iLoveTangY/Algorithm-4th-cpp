@@ -38,5 +38,7 @@
 test
 test.o
 test.exe
-test.cpp
 test.hpp
+
+data
+*.txt

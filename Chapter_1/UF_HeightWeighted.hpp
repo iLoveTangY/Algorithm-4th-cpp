@@ -1,24 +1,23 @@
-#ifndef WEIGHTEDQUICKUNION_H
-#define WEIGHTEDQUICKUNION_H
+#ifndef UF_HEIGHTWEIGHTED_H
+#define  UF_HEIGHTWEIGHTED_H
 
 #include "UF.hpp"
 
-class WeightedQuickUnion : public UF
+class UF_HeightWeighted : public UF
 {
     public:
-        WeightedQuickUnion(int N) : UF(N)
+        UF_HeightWeighted(int N) : UF(N)
         {
             for(int i = 0; i < N; i++)
-                sz.push_back(1);
+                height.push_back(0);
         }
 
-        virtual int find_id(int p) override
+        int find_id(int p) override
         {
             while(p != id[p])
                 p = id[p];
             return p;
         }
-
         void union_componet(int p, int q) override
         {
             int i = find_id(p);
@@ -26,21 +25,25 @@ class WeightedQuickUnion : public UF
             if(i == j)
                 return;
             // 将较小的树连接到较大的树上面
-            if(sz[i] < sz[j])
+            if(height[i] < height[j])
             {
                 id[i] = j;
-                sz[j] += sz[i];
+            }
+            else if(height[i] > height[j])
+            {
+                id[j] = i;
             }
             else
             {
                 id[j] = i;
-                sz[i] += sz[j];
+                height[i]++;
             }
             _count--;
         }
 
+
     private:
-        vector<int> sz;  // 各个根节点所对应的分量大小
+        vector<int> height;
 };
 
-#endif // WEIGHTEDQUICKUNION_H
+#endif

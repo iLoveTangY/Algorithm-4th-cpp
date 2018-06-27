@@ -1,4 +1,5 @@
-#include "WeightedQuickUnion.hpp"
+#include "UF_PathCompression.hpp"
+#include "StopWatch.hpp"
 #include <iostream>
 #include <vector>
 
@@ -8,7 +9,8 @@ int main(void)
 {
     int N, p, q;
     cin >> N;
-    WeightedQuickUnion uf(N);
+    UF_PathCompression uf(N);
+    StopWatch sw;
     while(cin >> p && cin >> q)
     {
         if(uf.connected(p, q))
@@ -16,7 +18,9 @@ int main(void)
         uf.union_componet(p, q);
         cout << p << " " << q << endl;
     }
+    double t = sw.elapsedTime();
     cout << uf.count_component() << " components." << endl;
+    cout << "Used " << t << " secs" << endl;
 
     return 0;
 }

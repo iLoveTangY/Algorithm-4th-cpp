@@ -130,12 +130,17 @@ c. `NlgN`
 为了得到$2\sqrt{N}$的结果，我们可以按照$\sqrt{N}$, $2\sqrt{N}$, $3\sqrt{N}$...的顺序扔鸡蛋，如果在某一次破了，再用线性查找的方法扔第二枚鸡蛋。
 ## 1.5 案例研究：union-find算法
 ### 1.5.7
+见[UF_QuickFind.hpp](./UF_QuickFind.hpp)和[UF_QuickUnion.hpp](./UF_QuickUnion.hpp)。
 ### 1.5.8
+在`for`循环里面当`i=p`的时候会将`id[p]`的值修改为`id[q]`的值，这样在下一次判断的时候`id[p]`的值已经不是初始值了，所以会出问题。要解决这个问题可以将`id[p]`的先保存下来，就跟书上的实现一样。
 ### 1.5.10
-### 1.5.12
+是正确的，但是由于q不一定是根节点，所以会增加树的高度，因此会影响性能。
 ### 1.5.13
+要实现路径压缩，只需要为find()添加一个循环，将在路径上遇到的所有节点都直接链接都根节点。见[UF_PathCompression.hpp](./UF_PathCompression.hpp)。
 ### 1.5.14
+将加权UF算法中的sz换成height就好，注意在大小相同的时候合并树时树的高度要加一。见[UF_HeightWeighted.hpp](./UF_HeightWeighted.hpp)。
 ### 1.5.17
+见[ErdosRenyi.cpp](./ErdoRenyi.cpp)。
 
 
 
