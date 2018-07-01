@@ -22,6 +22,16 @@ bool operator!=(const Transaction &lhs, const Transaction &rhs)
     return !(lhs == rhs);
 }
 
+bool operator<(const Transaction &lhs, const Transaction &rhs)
+{
+    return lhs._amount < rhs._amount;
+}
+
+bool operator>(const Transaction &lhs, const Transaction &rhs)
+{
+    return lhs._amount > rhs._amount;
+}
+
 bool whoOrder(const Transaction &t1, const Transaction &t2)
 {
     return t1._who < t2._who;

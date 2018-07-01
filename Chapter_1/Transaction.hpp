@@ -23,6 +23,8 @@ class Transaction
     friend bool whoOrder(const Transaction&, const Transaction&);
     friend bool whenOrder(const Transaction&, const Transaction&);
     friend bool amountOrder(const Transaction&, const Transaction&);
+    friend bool operator<(const Transaction&, const Transaction&);
+    friend bool operator>(const Transaction&, const Transaction&);
 
     private:
        string _who;

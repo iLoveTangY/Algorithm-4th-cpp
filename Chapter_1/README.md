@@ -1,5 +1,4 @@
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-# Chapter 1
+# Chapter 1 基础
 ## 1.1 基础编程模型
 ### 1.1.27
 **二项分布**
