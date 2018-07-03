@@ -29,5 +29,13 @@
 **昂贵的交换**  
 应该使用选择排序，因为选择排序的交换次数最少。
 ### 2.1.21
-**可比较的交易**
-见[Transaction.hpp](../Chapter_1/Transaction.hpp)和[Transaction.cpp](../Chapter_1/Transaction.cpp)
+**可比较的交易**  
+见[Transaction.hpp](../Chapter_1/Transaction.hpp)。
+### 2.1.22
+**交易排序测试用例**  
+见[SortTransaction](./SortTransaction.cpp)。
+### 2.1.24
+**插入排序的哨兵**  
+在开始插入排序之前找到最小的元素放在数组的开始位置就好。见[InsertionX](./InsertionX.hpp)。
+### 2.1.25
+**不需要交换的插入排序**  

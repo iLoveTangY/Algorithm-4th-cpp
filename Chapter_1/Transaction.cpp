@@ -5,57 +5,6 @@
 
 using namespace std;
 
-
-ostream& operator<<(ostream &os, const Transaction &t)
-{
-    os << t._who << " " << t._when << " " << t._amount;
-    return os;
-}
-
-bool operator==(const Transaction &lhs, const Transaction &rhs)
-{
-    return (lhs._amount == rhs._amount) && (lhs._when == rhs._when) && (lhs._who == rhs._who);
-}
-
-bool operator!=(const Transaction &lhs, const Transaction &rhs)
-{
-    return !(lhs == rhs);
-}
-
-bool operator<(const Transaction &lhs, const Transaction &rhs)
-{
-    return lhs._amount < rhs._amount;
-}
-
-bool operator>(const Transaction &lhs, const Transaction &rhs)
-{
-    return lhs._amount > rhs._amount;
-}
-
-bool whoOrder(const Transaction &t1, const Transaction &t2)
-{
-    return t1._who < t2._who;
-}
-
-bool whenOrder(const Transaction &t1, const Transaction &t2)
-{
-    return t1._when < t2._when;
-}
-
-bool amountOrder(const Transaction &t1, const Transaction &t2)
-{
-    return t1._amount < t2._amount;
-}
-
-Transaction::Transaction(const string &transaction)
-{
-    vector<string> a;
-    split(transaction, " ", a);
-    _who = a[0];
-    _when = Date(a[1]);
-    _amount = stof(a[2]);
-}
-
 int main(void)
 {
     vector<Transaction> a;

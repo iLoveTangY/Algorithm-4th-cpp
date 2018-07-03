@@ -1,6 +1,8 @@
 #include "InsertionSort.hpp"
 #include "SelectionSort.hpp"
 #include "ShellSort.hpp"
+#include "InsertionX.hpp"
+#include "MergeSort.hpp"
 #include "../Chapter_1/StopWatch.hpp"
 #include <vector>
 #include <iostream>
@@ -14,10 +16,14 @@ double computeTime(const string &alg, vector<double> &a)
     StopWatch sw;
     if(alg == "Insertion")
         InsertionSort<double>().sort(a);
+    else if(alg == "InsertionX")
+        InsertionX<double>().sort(a);
     else if(alg == "Selection")
         SelectionSort<double>().sort(a);
     else if(alg == "Shell")
         ShellSort<double>().sort(a);
+    else if(alg == "Merge")
+        MergeSort<double>().sort(a);
     else if(alg == "Standard")
         sort(a.begin(), a.end());
 
